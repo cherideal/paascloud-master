@@ -71,16 +71,29 @@
     </dependency>
   </dependencies>
 
+  <repositories>
+    <repository>
+      <id>public</id>
+      <url>http://172.16.22.241/repository/maven-public/</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+  </repositories>
   <distributionManagement>
     <repository>
-      <id>paascloud-lib-rep</id>
-      <url>http://139.199.125.217:8081/content/repositories/paascloud-lib-rep/</url>
+      <id>releases</id>
+      <name>Release Repository</name>
+      <url>http://172.16.22.241/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <name>User Project Snapshot</name>
-      <url>http://139.199.125.217:8081/content/repositories/snapshots/</url>
-      <uniqueVersion>true</uniqueVersion>
+      <id>snapshots</id>
+      <name>Snapshot Repository</name>
+      <url>http://172.16.22.241/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
 
