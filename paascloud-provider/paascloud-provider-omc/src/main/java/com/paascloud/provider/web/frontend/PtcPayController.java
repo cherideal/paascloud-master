@@ -11,15 +11,11 @@
 
 package com.paascloud.provider.web.frontend;
 
-import com.alipay.api.AlipayApiException;
-import com.alipay.api.internal.util.AlipaySignature;
-import com.alipay.demo.trade.config.Configs;
 import com.google.common.collect.Maps;
 import com.paascloud.base.dto.LoginAuthDto;
 import com.paascloud.core.support.BaseController;
 import com.paascloud.provider.model.constant.PtcApiConstant;
 import com.paascloud.provider.service.PtcAlipayService;
-import com.paascloud.wrapper.WrapMapper;
 import com.paascloud.wrapper.Wrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -88,7 +84,7 @@ public class PtcPayController extends BaseController {
 		//非常重要,验证回调的正确性,是不是支付宝发的.并且呢还要避免重复通知.
 
 		params.remove("sign_type");
-		try {
+		/*try {
 			boolean alipayRSACheckedV2 = AlipaySignature.rsaCheckV2(params, Configs.getAlipayPublicKey(), "utf-8", Configs.getSignType());
 
 			if (!alipayRSACheckedV2) {
@@ -96,7 +92,7 @@ public class PtcPayController extends BaseController {
 			}
 		} catch (AlipayApiException e) {
 			logger.error("支付宝验证回调异常", e);
-		}
+		}*/
 
 		//todo 验证各种数据
 		Wrapper serverResponse = ptcAlipayService.aliPayCallback(params);
