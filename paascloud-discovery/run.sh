@@ -1,5 +1,5 @@
 #!/bin/bash
-servicePort=8079
+servicePort=8080
 serviceName=$(basename `pwd`)
 if [ ! -d "/data/logs/paascloud/$serviceName" ]; then
   mkdir -p /data/logs/paascloud/$serviceName
