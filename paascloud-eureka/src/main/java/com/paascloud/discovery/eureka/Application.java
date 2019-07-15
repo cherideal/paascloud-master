@@ -22,7 +22,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  */
 @EnableEurekaServer
 @SpringBootApplication
-public class PaasCloudEurekaApplication {
+public class Application {
 
 	/**
 	 * The entry point of application.
@@ -30,6 +30,6 @@ public class PaasCloudEurekaApplication {
 	 * @param args the input arguments
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(PaasCloudEurekaApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }
