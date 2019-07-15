@@ -71,6 +71,19 @@
     </dependency>
   </dependencies>
 
+  <repositories>
+    <repository>
+      <id>public</id>
+      <url>http://172.16.22.241/repository/maven-public/</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+  </repositories>
   <distributionManagement>
     <repository>
       <id>paascloud-lib-rep</id>
