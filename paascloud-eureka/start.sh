@@ -11,7 +11,7 @@ if [ -n "$1" ]; then
         "start")
             echo "*** Starting $serviceName, using profile: $1 ***"
             nohup java -server -Xmx512m -jar $serviceName.jar >/dev/null 2>&1 &
-            tailf /data/logs/paascloud/$serviceName/$serviceName|sed '/Started Application/Q'
+            tailf /data/logs/paascloud/$serviceName/$serviceName|sed '/Started ${serviceName}Application/Q'
             echo "*** Started $serviceName ***"
             exit 0
         ;;
