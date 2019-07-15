@@ -9,7 +9,7 @@ cp -f target/$serviceName.jar ./
 if [ -n "$1" ]; then
     case $1 in
         "start")
-            echo "*** Starting $serviceName, using profile: $1 ***"
+            echo "*** Starting $serviceName ***"
             nohup java -server -Xmx512m -jar $serviceName.jar >/dev/null 2>&1 &
             tailf /data/logs/paascloud/$serviceName/$serviceName|sed '/Started Application/Q'
             echo "*** Started $serviceName ***"
