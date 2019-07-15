@@ -24,7 +24,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 @SpringBootApplication
 @EnableConfigServer
 @EnableDiscoveryClient
-public class PaasCloudDiscoveryApplication {
+public class Application {
 
 	/**
 	 * The entry point of application.
@@ -32,6 +32,6 @@ public class PaasCloudDiscoveryApplication {
 	 * @param args the input arguments
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(PaasCloudDiscoveryApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }
