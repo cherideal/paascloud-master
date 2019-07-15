@@ -83,42 +83,6 @@
         <enabled>true</enabled>
       </releases>
     </repository>
-    <repository>
-      <id>my-lib-repo</id>
-      <url>http://nexus.paascloud.net/nexus/content/repositories/releases/</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>my-lib-repo-3rdparty</id>
-      <url>http://nexus.paascloud.net/content/repositories/thirdparty/</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>paascloud-lib-rep</id>
-      <url>http://nexus.paascloud.net/content/repositories/paascloud-lib-rep/</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </repository>
   </repositories>
   <distributionManagement>
     <repository>

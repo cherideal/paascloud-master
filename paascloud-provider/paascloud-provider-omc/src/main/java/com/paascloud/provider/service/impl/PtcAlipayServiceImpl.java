@@ -11,16 +11,6 @@
 
 package com.paascloud.provider.service.impl;
 
-import com.alipay.api.AlipayResponse;
-import com.alipay.api.response.AlipayTradePrecreateResponse;
-import com.alipay.demo.trade.config.Configs;
-import com.alipay.demo.trade.model.ExtendParams;
-import com.alipay.demo.trade.model.GoodsDetail;
-import com.alipay.demo.trade.model.builder.AlipayTradePrecreateRequestBuilder;
-import com.alipay.demo.trade.model.result.AlipayF2FPrecreateResult;
-import com.alipay.demo.trade.service.AlipayTradeService;
-import com.alipay.demo.trade.service.impl.AlipayTradeServiceImpl;
-import com.alipay.demo.trade.utils.ZxingUtils;
 import com.google.common.collect.Lists;
 import com.paascloud.BigDecimalUtil;
 import com.paascloud.base.dto.LoginAuthDto;
@@ -67,13 +57,13 @@ import java.util.Map;
 @Service
 public class PtcAlipayServiceImpl implements PtcAlipayService {
 
-	private static AlipayTradeService tradeService;
+	//private static AlipayTradeService tradeService;
 
 	static {
 
-		Configs.init("zfbinfo.properties");
+		//Configs.init("zfbinfo.properties");
 
-		tradeService = new AlipayTradeServiceImpl.ClientBuilder().build();
+		//tradeService = new AlipayTradeServiceImpl.ClientBuilder().build();
 	}
 
 	@Resource
@@ -142,18 +132,18 @@ public class PtcAlipayServiceImpl implements PtcAlipayService {
 		String storeId = "test_store_id";
 
 		// 业务扩展参数, 目前可添加由支付宝分配的系统商编号(通过setSysServiceProviderId方法), 详情请咨询支付宝技术支持
-		ExtendParams extendParams = new ExtendParams();
-		extendParams.setSysServiceProviderId("2088100200300400500");
+		//ExtendParams extendParams = new ExtendParams();
+		//extendParams.setSysServiceProviderId("2088100200300400500");
 
 
 		// 支付超时, 定义为120分钟
 		String timeoutExpress = "120m";
 
 		// 商品明细列表, 需填写购买商品详细信息,
-		List<GoodsDetail> goodsDetailList = Lists.newArrayList();
+		//List<GoodsDetail> goodsDetailList = Lists.newArrayList();
 
 		List<OmcOrderDetail> orderItemList = omcOrderDetailService.getListByOrderNoUserId(orderNo, userId);
-		for (OmcOrderDetail orderItem : orderItemList) {
+		/*for (OmcOrderDetail orderItem : orderItemList) {
 			GoodsDetail goods = GoodsDetail.newInstance(orderItem.getProductId().toString(), orderItem.getProductName(),
 					BigDecimalUtil.mul(orderItem.getCurrentUnitPrice().doubleValue(), 100D).longValue(),
 					orderItem.getQuantity());
@@ -228,13 +218,15 @@ public class PtcAlipayServiceImpl implements PtcAlipayService {
 			default:
 				log.error("不支持的交易状态, 交易返回异常!!!");
 				return WrapMapper.error("不支持的交易状态, 交易返回异常!!!");
-		}
+		}*/
+
+		return WrapMapper.error("不支持的交易状态, 交易返回异常!!!");
 	}
 
 	/**
 	 * 简单打印应答
 	 */
-	private void dumpResponse(AlipayResponse response) {
+	/*private void dumpResponse(AlipayResponse response) {
 		if (response != null) {
 			log.info(String.format("code:%s, msg:%s", response.getCode(), response.getMsg()));
 			if (StringUtils.isNotEmpty(response.getSubCode())) {
@@ -243,7 +235,7 @@ public class PtcAlipayServiceImpl implements PtcAlipayService {
 			}
 			log.info("body:" + response.getBody());
 		}
-	}
+	}*/
 
 	@Override
 	public Wrapper aliPayCallback(Map<String, String> params) {
